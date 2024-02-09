@@ -1,0 +1,224 @@
+:root {
+  --clr-primary-400: hsl(75, 94%, 57%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-400: hsl(0, 0%, 20%);
+  --clr-neutral-700: hsl(0, 0%, 12%);
+  --clr-neutral-900: hsl(0, 0%, 8%);
+
+  --ff-primary: "Inter", sans-serif;
+
+  --ff-body: var(--ff-primary);
+
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+
+  --fs-400: 0.875rem;
+  --fs-600: 1.5rem;
+
+  --fs-heading: var(--fs-600);
+  --fs-primary: var(--fs-400);
+}
+
+/* CSS Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* General Styling */
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff-body);
+  font-size: var(--fs-primary);
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-neutral-900);
+  display: grid;
+  place-content: center;
+}
+
+.container {
+  --max-width: 375px;
+  --padding: 2.5rem;
+
+  width: min(var(--max-width), 100%) - (var(--padding) * 2);
+  padding: var(--padding);
+  border-radius: 1rem;
+  display: grid;
+  gap: 1.75rem;
+  text-align: center;
+}
+
+@media (max-width: 375px) {
+  .container {
+    --max-width: 325px;
+    --padding: 1.5rem;
+
+    width: min(var(--max-width), 100%) - (var(--padding) * 2);
+    padding: var(--padding);
+  }
+}
+
+.primary-header {
+  letter-spacing: 0.05rem;
+}
+
+.primary-header > :last-child {
+  margin-top: 0.5rem;
+}
+
+.social-links {
+  display: grid;
+  gap: 1rem;
+}
+
+.social-links li {
+  border-radius: 0.5rem;
+}
+.social-links li:hover {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-900);
+}
+
+.social-link {
+  text-decoration: none;
+  display: block;
+  padding: 0.75rem;
+  color: inherit;
+}
+
+.avatar {
+  border-radius: 50%;
+  max-width: 90px;
+  max-height: 90px;
+  margin-inline: auto;
+}
+
+/* Utility Classes */
+
+.text-primary-400 {
+  color: var(--clr-primary-400);
+}
+
+.text-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+
+.text-neutral-400 {
+  color: var(--clr-neutral-400);
+}
+
+.bg-primary-400 {
+  background-color: var(--clr-primary-400);
+}
+
+.bg-neutral-400 {
+  background-color: var(--clr-neutral-400);
+}
+
+.bg-neutral-700 {
+  background-color: var(--clr-neutral-700);
+}
+
+.bg-neutral-900 {
+  background-color: var(--clr-neutral-900);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fs-heading {
+  font-size: var(--fs-heading);
+}
+
+.fs-primary {
+  font-size: var(--fs-primary);
+}
